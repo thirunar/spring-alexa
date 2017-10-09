@@ -1,0 +1,10 @@
+[
+  {
+    "name": "AMAZON.HelpIntent",
+    "response": "How can I help you"
+  },
+  {
+    "name": "AMAZON.CancelIntent",
+    "response": "Thank you for using the skill"
+  }
+]
