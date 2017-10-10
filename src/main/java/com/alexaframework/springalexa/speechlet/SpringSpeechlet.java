@@ -29,13 +29,16 @@ public abstract class SpringSpeechlet implements Speechlet {
                                       Session session) throws SpeechletException {
         try {
             Intent intent = intentRequest.getIntent();
+            SpeechletResponse response = staticIntentHandler.handle(session, intent);
+
+            if (response != null)
+                return response;
 
             for (IntentHandler handler : intentHandlers) {
                 if (handler.canHandle(intent.getName())) {
                     return handler.handle(session, intent);
                 }
             }
-            return staticIntentHandler.handle(session, intent);
         } catch (IOException e) {
             e.printStackTrace();
         }
