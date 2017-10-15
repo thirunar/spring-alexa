@@ -19,11 +19,11 @@ This library can be used as library for developing Alexa skill in Java. The obje
 For maven:
 
 ```
-		<dependency>
-			<groupId>com.alexaframework</groupId>
-			<artifactId>spring-alexa</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<dependency>
+    <groupId>com.alexaframework</groupId>
+    <artifactId>spring-alexa</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+</dependency>
 ```
 
 For gradle:
@@ -35,14 +35,14 @@ dependencies {
 
 ### Why use this framework?
 - Provides boiler plate code for developing Alexa skill
-- The adoption of Spring framework for developing Java application is growing massively. (Alexa Java Sdk)[https://github.com/amzn/alexa-skills-kit-java] is a plain Java application. This library helps in adding spring framework for developing the Alexa skill.
+- The adoption of Spring framework for developing Java application is growing massively. [Alexa Java Sdk](https://github.com/amzn/alexa-skills-kit-java) is a plain Java application. This library helps in adding spring framework for developing the Alexa skill.
 - Has handled all the default Intents
 - A basic skill can be developed by just creating a JSON
 - Well tested code
 
 ### How to use the library?
 - Install the library as mentioned above
-- Create a new spring boot application using the (spring initializer)[https://start.spring.io/].
+- Create a new spring boot application using the [spring initializer](https://start.spring.io/).
 - Add the dependency in `pom.xml` or `build.gradle`
 - Create a file called `intent_metadata.json`. The json should have `intent name` and `response` for the intent. The intent are nothing but the invocations coming to Alexa. In this json, the intent name has to be specified and the corresponding speech response for the intent has to be given. For example,
 
