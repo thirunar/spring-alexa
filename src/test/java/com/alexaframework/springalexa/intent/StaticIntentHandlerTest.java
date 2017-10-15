@@ -65,4 +65,16 @@ public class StaticIntentHandlerTest {
 
         assertNull(response);
     }
+
+    @Test
+    public void shouldReturnNullIfWhenParserReturnsNull() throws Exception {
+        when(parser.parse()).thenReturn(null);
+
+        Session session = Session.builder().withSessionId("123").build();
+        Intent intent = Intent.builder().withName("AMAZON.DummyIntent").build();
+
+        SpeechletResponse response = handler.handle(session, intent);
+
+        assertNull(response);
+    }
 }

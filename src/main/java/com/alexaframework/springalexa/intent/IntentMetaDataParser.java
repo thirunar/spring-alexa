@@ -25,9 +25,14 @@ public class IntentMetaDataParser {
     public List<IntentMetaData> parse() throws IOException {
         String resourceName = configuration.getProperty("metadata.intent.file", INTENT_METADATA_JSON);
 
-        Resource resource = resourceLoader.getResource(resourceName);
+        String withClassPath = String.format("classpath:%s", resourceName);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(resource.getFile(), new TypeReference<List<IntentMetaData>>(){});
+        Resource resource = resourceLoader.getResource(withClassPath);
+
+        if (resource.exists()) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readValue(resource.getURL(), new TypeReference<List<IntentMetaData>>(){});
+        }
+        return null;
     }
 }

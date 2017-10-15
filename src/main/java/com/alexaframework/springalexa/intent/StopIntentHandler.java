@@ -5,7 +5,9 @@ import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SpeechletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StopIntentHandler implements IntentHandler {
 
     private static final String INTENT_NAME = "AMAZON.StopIntent";

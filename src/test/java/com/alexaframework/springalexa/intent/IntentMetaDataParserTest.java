@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
@@ -36,6 +36,15 @@ public class IntentMetaDataParserTest {
                 .name("AMAZON.CancelIntent").response("Thank you for using the skill")
                 .build();
         assertTrue(metaDataList.containsAll(Arrays.asList(helpIntent, cancelIntent)));
+    }
+
+    @Test
+    public void shouldReturnNullWhenFileIsNotPresent() throws Exception {
+        System.setProperty("metadata.intent.file", "zyx.json");
+
+        List<IntentMetaData> metaDataList = parser.parse();
+
+        assertNull(metaDataList);
     }
 
     @Configuration
