@@ -1,3 +1,5 @@
+![Alt text](https://circleci.com/gh/thirunar/spring-alexa.svg?style=shield)
+
 # Framework for developing Alexa Skill using Spring [In development]
 
 Ever wondered that an Alexa skill can be created by just creating a JSON? Well, this library is a saviour for you.
