@@ -10,7 +10,7 @@ This library can be used as library for developing Alexa skill in Java. The obje
 - Spring
 - Maven
 
-## Get Started
+## Get Started  
 ### How to build the library?
 - Clone the repository `git@github.com:thirunar/spring-alexa.git` 
 - cd `spring-alexa`
